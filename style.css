@@ -12,7 +12,8 @@ main{text-align: center; display: flex; justify-content: center; align-items: ce
 	border-radius: 10px;
 }
 
-.key{width:47px; height: 69px;  background: #000; 
+.key{
+    width:47px; height: 69px;  background: #000; 
     border-radius: 8px;
     padding: 0 12px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -26,7 +27,8 @@ main{text-align: center; display: flex; justify-content: center; align-items: ce
 .row{margin: 20px; }
 .row .key{margin: 0 10px; }
 .key img{width: 16px; height: 16px; position: absolute; left: 4px; bottom: 2px;}
-.key .text{position: absolute; left: 10px; top: 4px; }
+.key .text{position: absolute; left: 27px; top: 18px; }
 
 kbd{
-	display: inline-block; text-transform: uppercase; position: relative; }
+    display: inline-block; text-transform: uppercase; position: relative;
+ }
