@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta https-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -18,7 +18,13 @@
     <footer></footer>
     <script>
     
-    
+    var hashA = init()
+    var keys = hashA['keys']
+    var hash = hashA['hash']
+
+    generateKeyboard(keys,hash)
+
+    listenToUser(hash)
 
     function generateKeyboard(keys,hash){
         for(var index = 0;index < keys['length'];index = index + 1){
@@ -72,9 +78,7 @@
             }
     }
 
-    var hashA = init()
-    var keys = hashA['keys']
-    var hash = hashA['hash']
+
 
     function getFromLocalStorage(name){
         return JSON.parse(localStorage.getItem(name)||'null')
@@ -97,7 +101,7 @@
             var key = button2['id']
             var x = prompt('给我一个网址')
             hash[key] = x
-            img2.src = 'http://'+ x + '/favicon.ico'
+            img2.src = 'https://'+ x + '/favicon.ico'
             img2.onerror = function(xxx){
                 xxx.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
 				}
@@ -109,7 +113,7 @@
     function createImage(domain){
         var img = tag('img')
         if(domain){
-            img.src = 'http://' + domain + '/favicon.ico'
+            img.src = 'https://' + domain + '/favicon.ico'
         }else{
             img.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
         }
@@ -120,16 +124,15 @@
     }
 
     function listenToUser(hash){
-        document.onkeypress = function(xyz){
-            var key = xyz['key']
+        document.onkeypress = function(abc){
+            var key = abc['key']
             var website = hash[key]
-            window.open('http://' + website,'_blank')
+            console.log(website)
+            window.open('https://' + website,'_blank')
         }
     }
     
-    generateKeyboard(keys,hash)
-
-    listenToUser(hash)
+   
 
     </script>
 </body>
