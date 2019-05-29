@@ -137,6 +137,14 @@
             console.log(key)
             window.open('https://' + website,'_blank')
         }
+
+        main.addEventListener('click',function(e){
+            var key = e.target.innerText.toLowerCase()
+            var website = hash[key]
+            console.log(key)
+            console.log(e.target)
+            window.open('https://' + website,'_blank')
+        })
     }
     
    
