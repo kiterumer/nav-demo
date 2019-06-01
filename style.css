@@ -38,7 +38,7 @@ h1{
 .row{margin: 24px; }
 .row .key{margin: 0 10px; }
 .key img{width: 16px; height: 16px; position: absolute; left: 4px; bottom: 2px;}
-.key .text{position: absolute; left: 27px; top: 18px; }
+.key .text{position: absolute; left: 27px; top: 18px; color:#fff;}
 
 kbd{
     display: inline-block; text-transform: uppercase; position: relative;

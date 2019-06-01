@@ -16,14 +16,14 @@
 
             var row = keys[index];
             for(var index2 = 0;index2 < row['length']; index2 = index2 + 1){
-                var span = createSpan(row[index2]);
+                var a = createa(row[index2]);
                 var button = createButton(row[index2]);
                 var img = createImage(hash[row[index2]]);
 
                 var kbd = tag('kbd');
                 kbd.className = 'key';
 
-                kbd.appendChild(span)
+                kbd.appendChild(a)
                 kbd.appendChild(img)
                 kbd.appendChild(button)
 
@@ -87,12 +87,15 @@
     function getFromLocalStorage(name){
         return JSON.parse(localStorage.getItem(name)||'null')
     }
-    // 生成span函数
-    function createSpan(textContent){
-        var span = tag('span')
-        span.textContent = textContent
-        span.className = "text"
-        return span
+    // 生成a函数
+    function createa(textContent){
+        var a = tag('a')
+        var website = hash[textContent]
+        a.textContent = textContent
+        a.className = "text"
+        a.target = "_blank"
+        a.href =  'https://' + website,'_blank'
+        return a
     }
     // 生成编辑按钮函数
     function createButton(id){
@@ -137,14 +140,6 @@
             console.log(key)
             window.open('https://' + website,'_blank')
         }
-
-        main.addEventListener('click',function(e){
-            var key = e.target.innerText.toLowerCase()
-            var website = hash[key]
-            console.log(key)
-            console.log(e.target)
-            window.open('https://' + website,'_blank')
-        })
     }
     
    
